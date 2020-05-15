@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px){
+    .noBlock{
+        display: none;
+    }
+}
+ul li{
+    list-style: none;
+}
+a{
+    color: blue;
+}
