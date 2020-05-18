@@ -22,22 +22,137 @@
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <p class="nav-link">Classique</p>
+                        <p class="nav-link" onclick="switchCat(0)">Classique</p>
                     </li>
                     <li class="nav-item">
-                        <p class="nav-link">Spéciaux</p>
+                        <p class="nav-link" onclick="switchCat(1)">Spéciaux</p>
                     </li>
                     <li class="nav-item">
-                        <p class="nav-link">Lumineux
+                        <p class="nav-link" onclick="switchCat(2)">Lumineux
                         <p>
                     </li>
                     <li class="nav-item justify-content-end">
-                        <p class="nav-link">Panier</p>
+                        <!-- Button trigger modal-->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Launch modal</button>
+
+                        <!-- Modal: modalCart -->
+                        <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <!--Header-->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <!--Body-->
+                                    <div class="modal-body">
+
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Product name</th>
+                                                    <th>Price</th>
+                                                    <th>Remove</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Product 1</td>
+                                                    <td>100$</td>
+                                                    <td><a><i class="fas fa-times"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Product 2</td>
+                                                    <td>100$</td>
+                                                    <td><a><i class="fas fa-times"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Product 3</td>
+                                                    <td>100$</td>
+                                                    <td><a><i class="fas fa-times"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>Product 4</td>
+                                                    <td>100$</td>
+                                                    <td><a><i class="fas fa-times"></i></a></td>
+                                                </tr>
+                                                <tr class="total">
+                                                    <th scope="row">5</th>
+                                                    <td>Total</td>
+                                                    <td>400$</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <!--Footer-->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                                        <button class="btn btn-primary">Checkout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal: modalCart -->
                     </li>
                 </ul>
 
             </div>
         </nav>
+
+        <!-- Button trigger modal-->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAbandonedCart">Launch
+            modal</button>
+
+        <!-- Modal: modalAbandonedCart-->
+        <div class="modal fade right" id="modalAbandonedCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading">Product in the cart</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-3">
+                                <p></p>
+                                <p class="text-center"><i class="fas fa-shopping-cart fa-4x"></i></p>
+                            </div>
+
+                            <div class="col-9">
+                                <p>Do you need more time to make a purchase decision?</p>
+                                <p>No pressure, your product will be waiting for you in the cart.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-info">Go to cart</a>
+                        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!-- Modal: modalAbandonedCart-->
         <section id="classic" class="container-fluid text-center">
             <!--Caroussel classique-->
             <p class="h4">Classique</p>
@@ -48,12 +163,9 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/classic/classicBlack.jpg" alt="canard en plastique noir" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard noir 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck(0)">Ajouter au Panier</button>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -64,12 +176,9 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/classic/classicGreen.jpg" alt="canard en plastique vert" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard vert 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck(1)">Ajouter au Panier</button>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -82,10 +191,7 @@
                             <div class="card-body">
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck(2)">Ajouter au Panier</button>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -99,10 +205,7 @@
                             <div class="card-body">
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck(3)">Ajouter au Panier</button>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -116,10 +219,7 @@
                             <div class="card-body">
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck(4)">Ajouter au Panier</button>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -132,10 +232,7 @@
                             <div class="card-body">
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck(5)">Ajouter au Panier</button>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -248,7 +345,7 @@
                     </div>
                 </div>
         </section>
-        <section id="special" class="container-fluid text-center">
+        <section id="led" class="container-fluid text-center">
             <!--Caroussel Lumineux-->
             <p class="h4">Lumineux</p>
             <div class="container">
@@ -353,6 +450,73 @@
                     </div>
                 </div>
         </section>
+        <!-- Modal: modalQuickView -->
+        <div class="modal fade" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <!--Carousel Wrapper-->
+                                <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                                    <!--Slides-->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <img id="image" class="d-block w-100" src="assets/img/classic/classicYellow.jpg" alt="First slide">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/.Carousel Wrapper-->
+                            </div>
+                            <div class="col-lg-7">
+                                <h2 class="h2-responsive product-name">
+                                    <strong id="name">Product Name</strong>
+                                </h2>
+                                <h4 class="h4-responsive">
+                                    <span class="green-text">
+                                        <strong id="price"></strong>
+                                    </span>
+                                </h4>
+                                <div class="card">
+                                    <!-- Card body -->
+                                    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                        <div class="card-body" id="description">
+                                            description du canard
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                </div>
+                                <!-- Add to Cart -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <select class="md-form mdb-select colorful-select dropdown-primary">
+                                                <option value="" disabled selected>Option</option>
+                                                <option value="1">Option1</option>
+                                                <option value="2">Option2</option>
+                                                <option value="3">Option3</option>
+                                            </select>
+                                            <label>Select color</label>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                        <button class="btn btn-primary">Ajouter au panier
+                                            <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.Add to Cart -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="container-fluid">
             <!-- Social buttons -->
             <!-- Grid row-->
