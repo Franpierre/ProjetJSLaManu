@@ -2,10 +2,23 @@
     .noBlock{
         display: none;
     }
+header{
+   background-color: grey;    
+ }   
+h1{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}  
 }
 ul li{
     list-style: none;
 }
 a{
     color: blue;
+
 }
+.navbar-nav {
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+
+

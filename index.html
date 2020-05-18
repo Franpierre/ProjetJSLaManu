@@ -13,9 +13,15 @@
 
     <body>
         <header>
-            <h1 class="text-center">CANARDLAND</h1>
+            <div class="container-fluid"> <!--bande titre-->
+                <div class="row">
+                  <div class="col bg-white shadow-sm p-3"><img class="img-fluid rounded mx-auto d-block" src="assets/img/logocanard.png"/>
+                <h1 class="text-center">CanardLand</h1>
+            </div>
+         </div> 
+       </div>
         </header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-around ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,18 +35,21 @@
                     </li>
                     <li class="nav-item">
                         <p class="nav-link">Lumineux
-                        <p>
+                        </p>
                     </li>
-                    <li class="nav-item justify-content-end">
+                    <li class="nav-item ">
                         <p class="nav-link">Panier</p>
                     </li>
                 </ul>
 
             </div>
         </nav>
+        <div class="row">
+            <div class="col-12 col-md-6 bg-secondary"> <p class="h2">Classique</p></div>
+        </div>
         <section id="classic" class="container-fluid text-center">
             <!--Caroussel classique-->
-            <p class="h4">Classique</p>
+          
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -51,7 +60,7 @@
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView">Ajouter au Panier</button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                     </div>
                                     <small class="text-muted">9 mins</small>
@@ -247,6 +256,7 @@
                         </div>
                     </div>
                 </div>
+             </div>
         </section>
         <section id="special" class="container-fluid text-center">
             <!--Caroussel Lumineux-->
