@@ -1,24 +1,57 @@
-@media screen and (max-width: 768px){
+
     .noBlock{
         display: none;
     }
+
 header{
-   background-color: grey;    
- }   
-h1{
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}  
+    
 }
+h1{
+    justify-content: center;
+    font-family: 'Segoe UI', impact, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    padding-bottom: 5px;
+
+}
+
 ul li{
     list-style: none;
 }
-a{
+.nav-link{
     color: blue;
 
 }
+.navbar{
+    background-color: #fdf503;
+    margin-bottom: 10px;
+}    
+
 .navbar-nav {
     flex-grow: 1;
     justify-content: space-around;
+    background-color: #fdf503;
+    border-color: #fdf503 ;
   }
+
+/* Ici */
+
+/* taille mobile */
+.header-logo {
+  width: 70%;
+ 
+}
+
+/* taille desktop */
+@media screen and (min-width: 768px){
+  .header-logo {
+    width: 15%;
+  }
+  /* en px ou rem */
+  h1{
+    font-size: 120px;
+  }
+}
+
+
 
 
