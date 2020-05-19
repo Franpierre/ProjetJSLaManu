@@ -41,7 +41,7 @@ let canard1 = new Canard(
     '000',
     'Classique',
     'assets/img/classic/classicBlack.jpg',
-    0,
+    1,
 )
 let canard2 = new Canard(
     'Canard Classique Vert',
@@ -50,7 +50,7 @@ let canard2 = new Canard(
     '001',
     'Classique',
     'assets/img/classic/classicGreen.jpg',
-    0,
+    1,
 )
 let canard3 = new Canard(
     'Canard Classique Rose',
@@ -59,7 +59,7 @@ let canard3 = new Canard(
     '002',
     'Classique',
     'assets/img/classic/classicPink.jpg',
-    0,
+    1,
 )
 let canard4 = new Canard(
     'Canard Classique Jaune',
@@ -68,7 +68,7 @@ let canard4 = new Canard(
     '003',
     'Classique',
     'assets/img/classic/classicYellow.jpg',
-    0,
+    1,
 )
 let canard5 = new Canard(
     'Canard Classique Rouge',
@@ -77,7 +77,7 @@ let canard5 = new Canard(
     '004',
     'Classique',
     'assets/img/classic/classicRed.jpg',
-    0,
+    1,
 )
 let canard6 = new Canard(
     'Canard Classique Bleu',
@@ -86,7 +86,7 @@ let canard6 = new Canard(
     '005',
     'Classique',
     'assets/img/classic/classicBlue.jpg',
-    0,
+    1,
 )
 //Fonction Set
 var allDucks = [canard1, canard2, canard3, canard4, canard5, canard6];
@@ -107,58 +107,43 @@ function setDuck(activeDuck) {
 //Ajouter au panier
 var cartArray = [];
 function addToCart() {
-    
+
     cartArray.push(allDucks[selectedDuck]);
-
-    for (let index = 0; index < cartArray.length; index++) {
-        let ttt = cartArray[index].ref;
-        let ref = allDucks[selectedDuck].ref;
-        if (ttt.includes(ref)) {
-            alert('aille');
-        }
-    }
-    
-    console.log(cartArray.includes(allDucks[selectedDuck].ref));
-    
-    /* for (let index = 0; index < cartArray.length; index++) {
-        if (allDucks[selectedDuck].ref == cartArray[index].ref) {
+    for (i = 0; i < cartArray.length; i++){
+      for (x = 0; x < cartArray.length; x++){
+          if (cartArray[i].ref == cartArray[x].ref && i != x) {
+            alert('Cet article à déjà été ajouté au panier ! Modifiez les quantités pour en obtenir plus !');
+            console.log('SAME ones in ARRAY: ' + cartArray[i]);
             cartArray.pop();
-            allDucks[selectedDuck].qty += 1;
-            console.log('DEJA PRESENT !!! et il y en a : ' + allDucks[selectedDuck].qty);
-        }
-    } */
-    
-    /* for (let index = 0; index < cartArray.length; index++) {
-        if (allDucks[selectedDuck].ref == cartArray[index].ref) {
-            allDucks[selectedDuck].qty += 1;
-            console.log('quantité = ' + allDucks[selectedDuck].qty);
-        } else {
-            
-        }
-    } */
+            cartArray[i].qty += 1;
+        }else console.log('no same ones');
+      }
+    }
+    console.log(cartArray);
 }
-
-
-
-/* var add = document.createElement('tr');
-            add.innerHTML = '<th scope="row">' + cartArray[index].ref + '</th> <td>' +
-                cartArray[index].name + '</td> <td>' + cartArray[index].price + '€' +
-                '</td><td><a onclick="removeDuck()"><i class="fas fa-times"></i></a></td>'
-            document.getElementById('arrayIncrement').appendChild(add); */
 //Afficher panier
-/* function showCart() {
+function showCart() {
+    document.getElementById('arrayIncrement').innerHTML = ' ';
     for (let index = 0; index < cartArray.length; index++) {
         var add = document.createElement('tr');
-        add.innerHTML = '<th scope="row">' + cartArray[index].ref + '</th> <td>' +
-            cartArray[index].name + '</td> <td>' + cartArray[index].price + '€' +
-            '</td><td><a onclick="removeDuck(' + selectedDuck + ')"><i class="fas fa-times"></i></a></td>'
+        add.innerHTML = '<th scope="row">' + cartArray[index].ref + '</th>' +
+            '<td>' + cartArray[index].name + '</td>' +
+            '<td>' + cartArray[index].price + '€' + '</td>' +
+            '<td><select class="md-form mdb-select colorful-select dropdown-primary"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>' +
+            '<td onclick="removeDuck(' + 'this.parentNode' + ')"><i class="fas fa-times"></i></td>';
         document.getElementById('arrayIncrement').appendChild(add);
     }
 }
 //Retirer article
-function removeDuck(item) {
-    cartArray.splice(item, 0);
-
+function removeDuck(item){
+    item.remove();
 }
-
-//bouton ajout/retrait article */
+//Prix Total
+function sum() {
+    var somme = 0;
+    for (let index = 0; index < cartArray.length; index++) {
+        somme += cartArray[index].price; 
+    }
+    document.getElementById('totalPrice').innerHTML = somme + '€';
+    console.log(somme);
+}

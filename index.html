@@ -33,11 +33,10 @@
                     </li>
                     <li class="nav-item justify-content-end">
                         <!-- Button trigger modal-->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart" onclick="showCart()">Panier</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart" onclick="showCart(), sum()">Panier</button>
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-info" onclick="btn()">Tableau</button>
         </nav>
         <section id="classic" class="container-fluid text-center">
             <!--Caroussel classique-->
@@ -136,13 +135,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/special/babyCustom.jpg" alt="canard en plastique bébé" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard bébé 10cm x 6cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('006')">Ajouter au Panier</button>
+                                    <small class="text-muted">20€</small>
                                 </div>
                             </div>
                         </div>
@@ -152,13 +148,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/special/docCustom.jpg" alt="canard en plastique docteur" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard médecin 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('007')">Ajouter au Panier</button>
+                                    <small class="text-muted">20€</small>
                                 </div>
                             </div>
                         </div>
@@ -168,13 +161,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/special/frenchCustom.jpg" alt="canard en plastique français" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard Extrême Droite 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('008')">Ajouter au Panier</button>
+                                    <small class="text-muted">20€</small>
                                 </div>
                             </div>
                         </div>
@@ -185,13 +175,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/special/kingCustom.png" alt="canard en plastique roi" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard Roi 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('009')">Ajouter au Panier</button>
+                                    <small class="text-muted">20€</small>
                                 </div>
                             </div>
                         </div>
@@ -200,15 +187,11 @@
                         <div class="card mb-4 shadow-sm">
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/special/pirateCustom.jpg" alt="canard en plastique pirate" />
-
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard Pirate 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('010')">Ajouter au Panier</button>
+                                    <small class="text-muted">20€</small>
                                 </div>
                             </div>
                         </div>
@@ -218,13 +201,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/special/punkCustom.jpg" alt="canard en plastique punk" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard Punk 12cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('011')">Ajouter au Panier</button>
+                                    <small class="text-muted">20€</small>
                                 </div>
                             </div>
                         </div>
@@ -241,13 +221,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/led/ledBlue.jpg" alt="canard en plastique bleu à led" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard lumineux bleu 10cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('012')">Ajouter au Panier</button>
+                                    <small class="text-muted">50€</small>
                                 </div>
                             </div>
                         </div>
@@ -257,13 +234,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/led/ledYellow.jpg" alt="canard en plastique jaune à led" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard lumineux jaune 10cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('013')">Ajouter au Panier</button>
+                                    <small class="text-muted">50€</small>
                                 </div>
                             </div>
                         </div>
@@ -273,13 +247,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/led/ledGreen.jpg" alt="canard en plastique vert a led" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard lumineux vert 10cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('014')">Ajouter au Panier</button>
+                                    <small class="text-muted">50€</small>
                                 </div>
                             </div>
                         </div>
@@ -290,13 +261,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/led/ledPink.jpg" alt="canard en plastique rose a led" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard lumineux rose 10cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('015')">Ajouter au Panier</button>
+                                    <small class="text-muted">50€</small>
                                 </div>
                             </div>
                         </div>
@@ -307,13 +275,10 @@
                                 aria-label="Placeholder: Thumbnail" src="assets/img/led/ledRed.jpg" alt="canard en plastique rouge a led" />
 
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard lumineux rouge 10cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('016')">Ajouter au Panier</button>
+                                    <small class="text-muted">50€</small>
                                 </div>
                             </div>
                         </div>
@@ -323,13 +288,10 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                                 aria-label="Placeholder: Thumbnail" src="assets/img/led/ledWhite.jpg" alt="canard en plastiqueblanc a led" />
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Petit canard lumineux gris 10cm x 8cm</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" onclick="setDuck('017')">Ajouter au Panier</button>
+                                    <small class="text-muted">50€</small>
                                 </div>
                             </div>
                         </div>
@@ -428,13 +390,15 @@
                                     </td>
                                     <td></td>
                                 </tr>
+                            </tbody>
+                            <tfoot>
                                 <tr class="total">
-                                    <th scope="row">5</th>
-                                    <td>Total</td>
-                                    <td>400$</td>
+                                    <th scope="row"></th>
+                                    <th>Total</th>
+                                    <td id="totalPrice">400$</td>
                                     <td></td>
                                 </tr>
-                            </tbody>
+                            </tfoot>
                         </table>
 
                     </div>
