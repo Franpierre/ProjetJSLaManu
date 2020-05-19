@@ -255,4 +255,5 @@ function sum() {
     }
     document.getElementById('totalPrice').innerHTML = somme + '€';
     console.log(somme);
+    
 }
