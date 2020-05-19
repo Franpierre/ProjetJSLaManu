@@ -238,21 +238,56 @@ function showCart() {
         add.innerHTML = '<th scope="row">' + cartArray[index].ref + '</th>' +
             '<td>' + cartArray[index].name + '</td>' +
             '<td>' + cartArray[index].price + '€' + '</td>' +
-            '<td><select class="md-form mdb-select colorful-select dropdown-primary"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>' +
-            '<td onclick="removeDuck(' + 'this.parentNode' + ')"><i class="fas fa-times"></i></td>';
+            '<td>' + '<button onclick="plus(' + '\'' + cartArray[index].qty + '\'' + ', ' + 'this.parentNode' + ')" class="btn btn-primary">-</button>' + ' ' + cartArray[index].qty +  ' ' + '<button onclick="plus(' + '\'' + cartArray[index].ref + '\'' + ', ' + 'this.parentNode' + ')" class="btn btn-primary">+</button>' + '</td>' +
+            '<td onclick="removeDuck(' + 'this.parentNode' + ', ' + '\'' + cartArray[index].ref + '\''  +')"><i class="fas fa-times"></i></td>';
         document.getElementById('arrayIncrement').appendChild(add);
     }
 }
 //Retirer article
-function removeDuck(item){
-    item.remove();
+function removeDuck(item, ref) {
+        for (let x = 0; x < cartArray.length; x++) {
+        if (cartArray[x].ref == ref) {
+            cartArray.splice(x, 1);
+            item.remove();
+        }
+    }
+    showCart();
 }
 //Prix Total
 function sum() {
     var somme = 0;
     for (let index = 0; index < cartArray.length; index++) {
-        somme += cartArray[index].price; 
+        let qtyxprice = cartArray[index].qty * cartArray[index].price;
+        somme += qtyxprice; 
     }
     document.getElementById('totalPrice').innerHTML = somme + '€';
     console.log(somme);
+}
+//qty total ligne
+
+//qty ++ --
+function plus(i, item) {
+    for (let index = 0; index < allDucks.length; index++) {
+        if (allDucks[index].ref == i) {
+            allDucks[index].qty += 1;
+            item.innerHTML = '<button onclick="minus(' + '\'' + i + '\'' + ', ' + 'this.parentNode' + ', sum())" class="btn btn-primary">-</button>' + ' ' + allDucks[index].qty + ' ' + '<button onclick="plus(' + '\'' + i + '\'' + ', ' + 'this.parentNode' + ', sum())" class="btn btn-primary">+</button>';
+        }
+    } 
+}
+function minus(i, item) {
+    for (let index = 0; index < allDucks.length; index++) {
+        if (allDucks[index].ref == i) {
+            var ref = allDucks[index].ref;
+            allDucks[index].qty -= 1;
+            item.innerHTML = '<button onclick="minus(' + '\'' + i + '\'' + ', ' + 'this.parentNode' + ', sum())" class="btn btn-primary">-</button>' + ' ' + allDucks[index].qty + ' ' + '<button onclick="plus(' + '\'' + i + '\'' + ', ' + 'this.parentNode' + ', sum())" class="btn btn-primary">+</button>';
+            if (allDucks[index].qty < 1) {
+                for (let x = 0; x < cartArray.length; x++) {
+                    if (cartArray[x].ref == ref) {
+                        cartArray.splice(x, 1);
+                        showCart();
+                    }
+                }
+            }
+        }
+    } 
 }
