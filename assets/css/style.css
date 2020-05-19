@@ -1,9 +1,3 @@
-
-
-
-header{
-    
-}
 h1{
     justify-content: center;
     font-family: 'Segoe UI', impact, Geneva, Verdana, sans-serif;
@@ -11,7 +5,9 @@ h1{
     padding-bottom: 5px;
 
 }
-
+footer a{
+  color: black;
+}
 ul li{
     list-style: none;
 }
@@ -54,6 +50,5 @@ ul li{
 
  .noBlock{
     display: none;
-  }
-}
+  }}
 
